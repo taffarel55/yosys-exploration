@@ -5,3 +5,5 @@ venv/
 
 vunit_out/
 sim_build/
+
+synth/*.v

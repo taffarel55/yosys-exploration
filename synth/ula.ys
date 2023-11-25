@@ -1,0 +1,16 @@
+# read design
+read_verilog -sv ../src/ula/ula.v
+
+# generic synthesis
+synth -top ula
+
+# mapping to mycells.lib
+dfflibmap -liberty mycells.lib
+abc -liberty mycells.lib
+clean
+
+# print some statistics
+stat
+
+# write synthesized design
+write_verilog synth_ula.v
